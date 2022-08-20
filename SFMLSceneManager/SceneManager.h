@@ -12,10 +12,13 @@ private:
 	sf::RenderWindow* m_parentWindow = nullptr;
 public:
 	SceneManager(sf::RenderWindow* parentWindow);
+	SceneManager();
 	void addScene(Scene *scene);
 	void removeScene(Scene* scene);
 	Scene* getScene(std::string name);
 	void setActiveScene(std::string name);
+	void setParentWindow(sf::RenderWindow* parentWindow);
+	sf::RenderWindow* getParentWindow();
 	void draw();
 };
 

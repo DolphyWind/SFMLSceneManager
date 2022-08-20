@@ -5,6 +5,11 @@ SceneManager::SceneManager(sf::RenderWindow* parentWindow)
 	m_parentWindow = parentWindow;
 }
 
+SceneManager::SceneManager()
+{
+	m_parentWindow = nullptr;
+}
+
 void SceneManager::addScene(Scene* scene)
 {
 	if (m_scenes.size() == 0) m_activeScene = scene;
@@ -32,6 +37,16 @@ void SceneManager::setActiveScene(std::string name)
 		if (i->getName() == name)
 			m_activeScene = i;
 	}
+}
+
+void SceneManager::setParentWindow(sf::RenderWindow* parentWindow)
+{
+	m_parentWindow = parentWindow;
+}
+
+sf::RenderWindow* SceneManager::getParentWindow()
+{
+	return m_parentWindow;
 }
 
 void SceneManager::draw()
