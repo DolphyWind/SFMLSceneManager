@@ -39,6 +39,14 @@ void SceneManager::setActiveScene(std::string name)
 	}
 }
 
+void SceneManager::setActiveScene(Scene* scene)
+{
+	if (std::find(m_scenes.begin(), m_scenes.end(), scene) == m_scenes.end())
+		throw std::exception("Scene Manager does not contain scene specified!");
+	else
+		m_activeScene = scene;
+}
+
 void SceneManager::setParentWindow(sf::RenderWindow* parentWindow)
 {
 	m_parentWindow = parentWindow;

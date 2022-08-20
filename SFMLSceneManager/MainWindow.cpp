@@ -20,9 +20,9 @@ void MainWindow::update(sf::Time deltaTime)
 {
 	// Change scenes based on input
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
-		m_sceneManager.setActiveScene(m_scene1.getName());
+		m_sceneManager.setActiveScene(&m_scene1); // or m_sceneManager.setActiveScene(m_scene1.getName());
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
-		m_sceneManager.setActiveScene(m_scene2.getName());
+		m_sceneManager.setActiveScene(&m_scene2); // or m_sceneManager.setActiveScene(m_scene2.getName());
 }
 
 void MainWindow::draw()
@@ -56,7 +56,7 @@ MainWindow::MainWindow()
 	// Add scenes to scene manager
 	m_sceneManager.addScene(&m_scene1);
 	m_sceneManager.addScene(&m_scene2);
-	m_sceneManager.setActiveScene(m_scene1.getName());
+	m_sceneManager.setActiveScene(&m_scene1); // or m_sceneManager.setActiveScene(m_scene1.getName());
 }
 
 void MainWindow::mainLoop()

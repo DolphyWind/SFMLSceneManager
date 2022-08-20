@@ -17,6 +17,7 @@ public:
 	void removeScene(Scene* scene);
 	Scene* getScene(std::string name);
 	void setActiveScene(std::string name);
+	void setActiveScene(Scene* scene);
 	void setParentWindow(sf::RenderWindow* parentWindow);
 	sf::RenderWindow* getParentWindow();
 	void draw();
